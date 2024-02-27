@@ -21,11 +21,19 @@
       "type": "build"
     },
     {
+      "name": "eslint-config-prettier",
+      "type": "build"
+    },
+    {
       "name": "eslint-import-resolver-typescript",
       "type": "build"
     },
     {
       "name": "eslint-plugin-import",
+      "type": "build"
+    },
+    {
+      "name": "eslint-plugin-prettier",
       "type": "build"
     },
     {
@@ -53,6 +61,10 @@
     {
       "name": "jsii",
       "version": "~5.2",
+      "type": "build"
+    },
+    {
+      "name": "prettier",
       "type": "build"
     },
     {

@@ -16,17 +16,35 @@ const project = new cdk.JsiiProject({
   releaseToNpm: true,
   peerDeps: ['projen', 'constructs'],
   jest: false,
+  eslint: true,
+  eslintOptions: { prettier: true, dirs: ['.'] },
+  prettier: true,
+  prettierOptions: {
+    settings: {
+      semi: true,
+      singleQuote: true,
+      tabWidth: 2,
+    },
+  },
+  publishToPypi: {
+    distName: 'py-project',
+    module: 'py_project',
+    twineRegistryUrl: 'https://pypi.tree/',
+  },
 
   depsUpgradeOptions: {
     workflowOptions: {
-      projenCredentials:
-        GithubCredentials.fromPersonalAccessToken({ secret: 'GITHUB_TOKEN' }),
+      projenCredentials: GithubCredentials.fromPersonalAccessToken({
+        secret: 'GITHUB_TOKEN',
+      }),
       schedule: UpgradeDependenciesSchedule.WEEKLY,
     },
   },
+
   // deps: [],                /* Runtime dependencies of this module. */
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
   // devDeps: [],             /* Build dependencies for this module. */
   // packageName: undefined,  /* The "name" in package.json. */
 });
+
 project.synth();
