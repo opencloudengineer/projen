@@ -35,7 +35,7 @@ const project = new cdk.JsiiProject({
   depsUpgradeOptions: {
     workflowOptions: {
       projenCredentials: GithubCredentials.fromPersonalAccessToken({
-        secret: 'GITHUB_TOKEN',
+        secret: 'PROJEN_GITHUB_TOKEN',
       }),
       schedule: UpgradeDependenciesSchedule.WEEKLY,
     },
